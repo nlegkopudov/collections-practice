@@ -1,5 +1,7 @@
 package resources.test_data;
 
+import resources.test_objects.TestObject_1;
+
 import java.util.*;
 
 public class Collections {
@@ -11,10 +13,11 @@ public class Collections {
             21, 22, 11, 58, 88, 5, 5, 11, 22
     ));
 
-//    public static final HashSet<Integer> TEST_HASH_SET_INTEGERS = (HashSet<Integer>) Set.of(1, 2, 3, 4, 5);
-//
-//    public static final HashSet<Long> TEST_HASH_SET_LONGS = (HashSet<Long>) Set.of(1L, 2L, 3L, 4L, 5L);
-//
-//    public static final HashSet<Short> TEST_HASH_SET_SHORTS = (HashSet<Short>) Set.of((short) 1, (short) 2, (short) 3);
+    public static final HashSet<Integer> TEST_HASH_SET_INTEGERS = new HashSet<>(Set.of(1, 2, 3, 4, 5));
 
+    public static final ArrayList<Object> OBJECT_ARRAY_LIST = new ArrayList<>(Arrays.asList(
+            new TestObject_1("First", "Some data", 31),
+            new TestObject_1("Second", "Some another data", 729),
+            new TestObject_1("Third", "And some another data", 7)
+    ));
 }

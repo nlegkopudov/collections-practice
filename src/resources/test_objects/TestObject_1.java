@@ -1,18 +1,18 @@
 package resources.test_objects;
 
 public class TestObject_1 {
-    private String id;
+    private String orderNumber;
     private String strData;
     private int intData;
 
-    public TestObject_1(String id, String strData, int intData) {
-        this.id = id;
+    public TestObject_1(String orderNumber, String strData, int intData) {
+        this.orderNumber = orderNumber;
         this.strData = strData;
         this.intData = intData;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setOrderNumber(String orderNumber) {
+        this.orderNumber = orderNumber;
     }
 
     public void setStrData(String strData) {
@@ -23,8 +23,8 @@ public class TestObject_1 {
         this.intData = intData;
     }
 
-    public String getId() {
-        return id;
+    public String getOrderNumber() {
+        return orderNumber;
     }
 
     public String getStrData() {
@@ -33,5 +33,9 @@ public class TestObject_1 {
 
     public int getIntData() {
         return intData;
+    }
+
+    public void printObjectFields(){
+        System.out.println("Order: " + this.orderNumber + " Data: " + this.strData + " " + this.intData);
     }
 }
