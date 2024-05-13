@@ -1,7 +1,8 @@
 import resources.test_data.Collections;
 import resources.test_objects.TestObject_1;
 
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 
 import static processing.Collections.*;
 
@@ -12,12 +13,12 @@ public class Main {
                 "Коллекция не уникальных значений:");
 
         var nonUniqueCollection = Collections.TEST_ARRAY_LIST_STRINGS;
-        nonUniqueCollection.forEach(element -> System.out.print(element + " "));
+        nonUniqueCollection.forEach(element -> System.out.print("\"" + element + "\" "));
 
         System.out.println("\nКоллекция уникальных:");
 
         var onlyUniqueValues = returnUniqueValues(nonUniqueCollection);
-        onlyUniqueValues.forEach(element -> System.out.print(element + " "));
+        onlyUniqueValues.forEach(element -> System.out.print("\"" + element + "\" "));
         System.out.println("\n");
 
 
@@ -42,5 +43,15 @@ public class Main {
             System.out.print("Id = " + key + " :");
             object.printObjectFields();
         }
+
+        System.out.println(
+                "----- Примеры фильтрации -----\n" +
+                        "До фильтрации:");
+        ArrayList<String> collectionStrings = Collections.TEST_ARRAY_LIST_STRINGS;
+        collectionStrings.forEach(str -> System.out.print("\"" + str + "\" "));
+        System.out.println("\nПосле фильтрации:");
+        List<String> filteredStrings = collectionStrings.stream().filter(str -> str.startsWith("A")).toList();
+        filteredStrings.forEach(str -> System.out.print("\"" + str + "\" "));
+        System.out.println();
     }
 }
